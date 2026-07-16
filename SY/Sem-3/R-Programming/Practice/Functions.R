@@ -4,7 +4,7 @@ meanofabc
 
 mean(abc)
 
-# to remove from environment
+# to remove a variable from environment
 rm (meanofabc)
 
 values = c(98, 4, 68, 62)

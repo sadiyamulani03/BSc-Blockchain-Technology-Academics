@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "unitsConsumed",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "ratePerUnit",
+						"type": "uint256"
+					}
+				],
+				"name": "calBill",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FY/Sem-1/Solidity/Practicle Sessions/16.sol": "prac"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FY/Sem-1/Solidity/Practicle Sessions/16.sol": {
+			"keccak256": "0x90608306411b7cc02fa5f7cdc16b3f02c748e6c96c9df1ae71d69116010c9985",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ef2aa07da864e0a17c0e44bfc864ac0df4f48cfdb966a13aedaf63a104f89eea",
+				"dweb:/ipfs/QmaP3wU6KgY8TjiHg15T4e48QR87cq4X1Y6pQtAjrKXAqH"
+			]
+		}
+	},
+	"version": 1
+}
