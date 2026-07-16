@@ -9,16 +9,16 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "unitsConsumed",
+						"name": "obtainedMarks",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "ratePerUnit",
+						"name": "totalMarks",
 						"type": "uint256"
 					}
 				],
-				"name": "calBill",
+				"name": "calPer",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -43,7 +43,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"FY/Sem-1/Solidity/Practicle Sessions/16.sol": "prac"
+			"FY/Sem-1/Solidity/Practicle Sessions/18.sol": "prac"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -57,12 +57,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"FY/Sem-1/Solidity/Practicle Sessions/16.sol": {
-			"keccak256": "0x90608306411b7cc02fa5f7cdc16b3f02c748e6c96c9df1ae71d69116010c9985",
+		"FY/Sem-1/Solidity/Practicle Sessions/18.sol": {
+			"keccak256": "0x40655e4eaa85130f98635f83efb154f25d4f149a8ba5b44ad23f05099195ffb5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ef2aa07da864e0a17c0e44bfc864ac0df4f48cfdb966a13aedaf63a104f89eea",
-				"dweb:/ipfs/QmaP3wU6KgY8TjiHg15T4e48QR87cq4X1Y6pQtAjrKXAqH"
+				"bzz-raw://30b73867d2f72fc15d6363488749e85a6ccd60f7725655a203bccd56101a1ea5",
+				"dweb:/ipfs/Qmc6yPRM36aDQiniYpMAK8daejySS3z41N4gsR19DW3tRg"
 			]
 		}
 	},
