@@ -14,11 +14,11 @@ mymean(values)
 p = c(5,9,5,3,4,55,35,568,35,7)
 staddevia = function(s){}
 
-triArea = function(base, height){
+triArea = function(triangle_base, triangle_height){
   triangle_base = as.numeric(readline("Enter base value:"))
   triangle_height = as.numeric(readline("Enter height value:"))
   return(0.5*triangle_base*triangle_height)}
-triArea()
+triArea(triangle_base, triangle_height)
 
 triangle_base = as.numeric(readline("Enter base value:"))
 triangle_height = as.numeric(readline("Enter height value:"))
@@ -29,3 +29,4 @@ L = 3
 B = 5
 areaofrec = function(l,b){return(l*b)}
 areaofrec(L,B)
+
