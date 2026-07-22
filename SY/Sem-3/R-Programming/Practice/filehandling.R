@@ -25,5 +25,6 @@ data_1[3,5]="new_value"
 !is.na(NA)
 
 x = c(0,NA,2,3,-0.5,0.2)
+x>2 
 x>2 && !is.na(x)
 !is.na(x)
