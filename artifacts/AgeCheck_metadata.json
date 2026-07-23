@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					}
+				],
+				"name": "chkEligibility",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FY/Sem-1/Solidity/If-Else/1.sol": "AgeCheck"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FY/Sem-1/Solidity/If-Else/1.sol": {
+			"keccak256": "0x790da533b2d8606e381fd680e9dc23050574da6c0a684bc36794b0d7a026dd2d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a4993f1be8ce81109c13a642312fbfa166f631c7336490b1c2b13417681484f",
+				"dweb:/ipfs/QmX1a3VParMwkGVfXDUy3PHvwFXyTAUtSP8Q5NoxhntpZ4"
+			]
+		}
+	},
+	"version": 1
+}

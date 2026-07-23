@@ -1,0 +1,79 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "bookTicket",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "bookedTickets",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "remainningTickets",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FY/Sem-1/Solidity/Functions/5.sol": "TicketBooking"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FY/Sem-1/Solidity/Functions/5.sol": {
+			"keccak256": "0xba183a9fe5540d36243c4d93730bdc0a9016461170bad478198a62cd6e521a55",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bb6773f94b078e9a7dbfb07ebb6f242b760dbe4515d01a0ce3a3c487a6107f34",
+				"dweb:/ipfs/QmdcwYptNxwsRewo2ZGdYPFefwBQBsEo7A9XLKDtDiZrg4"
+			]
+		}
+	},
+	"version": 1
+}

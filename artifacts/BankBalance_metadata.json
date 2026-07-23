@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "acntB2",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "acntBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FY/Sem-1/Solidity/variablesAndDataTypes/2.sol": "BankBalance"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FY/Sem-1/Solidity/variablesAndDataTypes/2.sol": {
+			"keccak256": "0xe3ae14dea3fe293bf091dc735f9d0e38707f5e1c4be9c1fc7c3b5d82d5170f87",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a2a3a1859780d0fa7a2454ea423d6896dc4d0be68b262d33acb421a1d2722d09",
+				"dweb:/ipfs/QmRmweUfTMsd9V3PyMZBCtUMr9nFBddT2HWAMS4YpDqJcw"
+			]
+		}
+	},
+	"version": 1
+}

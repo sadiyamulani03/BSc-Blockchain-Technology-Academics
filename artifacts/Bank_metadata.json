@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"FY/Sem-1/Solidity/If-Else/1.sol": "Prac"
+			"FY/Sem-1/Solidity/variablesAndDataTypes/2.sol": "Bank"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -32,12 +32,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"FY/Sem-1/Solidity/If-Else/1.sol": {
-			"keccak256": "0xccd4d38285ade8222372a0910bbc90930e674c42ebeca72df46917338ed4b009",
+		"FY/Sem-1/Solidity/variablesAndDataTypes/2.sol": {
+			"keccak256": "0x34477372b13daff7796841325d5fc618767edd870ad9f2454e96f2ea8990b16a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://17cfb53ee3de2b6ddc84196b745c79c860821cb7181b9fdd5f83e834ede06731",
-				"dweb:/ipfs/Qmcpgt9Nn6k7f6z3T219LsTM2wurqgjXpeecJ9r1MyLEgB"
+				"bzz-raw://cfa7718794e12890f33def7373856c0dbaf7db24e080b9f547d8447b70decde8",
+				"dweb:/ipfs/QmQde49pPNHBBkTo451hoJb2yQY9YLF7dnycoxpqaH2mDm"
 			]
 		}
 	},

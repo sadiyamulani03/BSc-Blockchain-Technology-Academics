@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "book",
+						"type": "string"
+					}
+				],
+				"name": "issueBook",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FY/Sem-1/Solidity/Functions/4.sol": "LibrarySystem"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FY/Sem-1/Solidity/Functions/4.sol": {
+			"keccak256": "0x8ec6a6cd265c20cf373d9032105118c38e1417ac7693cb4315dd9258a6632ae9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e224276c4729e8c048fd38328fd4bea5b813128ab94b254546afda0bd85be9eb",
+				"dweb:/ipfs/QmQKSg4jV8jKwhFBitUs6e9dyg9ctmHHEGRCTAk9cCCvoj"
+			]
+		}
+	},
+	"version": 1
+}

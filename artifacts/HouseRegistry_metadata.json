@@ -1,0 +1,85 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "houseOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "housePrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isSold",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FY/Sem-1/Solidity/variablesAndDataTypes/4.sol": "HouseRegistry"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FY/Sem-1/Solidity/variablesAndDataTypes/4.sol": {
+			"keccak256": "0x80534a7ab97ea9d67a8a02505ab579034aebc4e06b2ab352088fdf801df2a95c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3833c2a1aa5c01423f592cd5fadf6488ba3ef54e1d00e1ca096dfa3c55643239",
+				"dweb:/ipfs/QmQtLJCe2u4p3XZnBBsafhKzpRbFciiSRC3835yXuucMtt"
+			]
+		}
+	},
+	"version": 1
+}

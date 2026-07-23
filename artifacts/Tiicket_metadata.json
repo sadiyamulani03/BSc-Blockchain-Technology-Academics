@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"FY/Sem-1/Solidity/If-Else/1.sol": "Prac"
+			"FY/Sem-1/Solidity/Functions/5.sol": "Tiicket"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -32,12 +32,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"FY/Sem-1/Solidity/If-Else/1.sol": {
-			"keccak256": "0xccd4d38285ade8222372a0910bbc90930e674c42ebeca72df46917338ed4b009",
+		"FY/Sem-1/Solidity/Functions/5.sol": {
+			"keccak256": "0x9447fc90497e4fec1ef37b01a2d3bb1702f76c77d1afc6cf89ef4d2b44c928f1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://17cfb53ee3de2b6ddc84196b745c79c860821cb7181b9fdd5f83e834ede06731",
-				"dweb:/ipfs/Qmcpgt9Nn6k7f6z3T219LsTM2wurqgjXpeecJ9r1MyLEgB"
+				"bzz-raw://d603910bad46557cb84a35ab098fc2fafb5dfe6b4244383ffe2aad0fd6d65de4",
+				"dweb:/ipfs/QmWFE2E94XQxEBxbpLn6CNpQsPyctNPRRpMqQCiHoAMPz2"
 			]
 		}
 	},

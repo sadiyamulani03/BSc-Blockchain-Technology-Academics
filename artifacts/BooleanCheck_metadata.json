@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "isEligible",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FY/Sem-1/Solidity/variablesAndDataTypes/3.sol": "BooleanCheck"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FY/Sem-1/Solidity/variablesAndDataTypes/3.sol": {
+			"keccak256": "0x2544fb2bdbec1664af48aa88c91b7e41ce7fe3b625c4a86855c56fbadabdfa20",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://61940a54095d71aa36b64fbc3176d548dfef8ee6435093629959ee7205d59195",
+				"dweb:/ipfs/QmSofzvTJzZtN9XH9LQsojBePBT133QGC2WQcpgrNs3qTB"
+			]
+		}
+	},
+	"version": 1
+}

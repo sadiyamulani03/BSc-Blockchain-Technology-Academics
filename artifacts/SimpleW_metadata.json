@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"FY/Sem-1/Solidity/If-Else/1.sol": "Prac"
+			"FY/Sem-1/Solidity/Functions/3.sol": "SimpleW"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -32,12 +32,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"FY/Sem-1/Solidity/If-Else/1.sol": {
-			"keccak256": "0xccd4d38285ade8222372a0910bbc90930e674c42ebeca72df46917338ed4b009",
+		"FY/Sem-1/Solidity/Functions/3.sol": {
+			"keccak256": "0x11fc88b4b12e2f01e13cada2c9ff783f72b3e585788ced36228b89a661ebf79b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://17cfb53ee3de2b6ddc84196b745c79c860821cb7181b9fdd5f83e834ede06731",
-				"dweb:/ipfs/Qmcpgt9Nn6k7f6z3T219LsTM2wurqgjXpeecJ9r1MyLEgB"
+				"bzz-raw://c443d0420e70a3b03c375132f17297ab1dcd4b7e96d26c063a8f9a4434674748",
+				"dweb:/ipfs/QmYWHQmh1JtKPmZddiTbdtNJRZsb9SxGeRdrbMLiLEsusJ"
 			]
 		}
 	},
