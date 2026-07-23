@@ -56,13 +56,14 @@ DF = data.frame(
   b=c("One",NA,"Three")
 )
 DF
+
 #filter values
 subset(DF, is.na(a))
 subset(DF, is.na(b))
 #omit(removes columns according to condition)
 na.omit(DF)
 
-#practice on exxisting libraries dataset
+#practice on existing libraries dataset
 library(car)
 head(Freedman)
 freedman <- Freedman
@@ -70,3 +71,35 @@ colnames(freedman)
 dim(freedman)
 str(freedman)
 max(freedman$density)
+
+summary(freedman$density)
+summary(freedman$population)
+
+#to remove Na 
+max(freedman$population, na.rm=T)
+Freedman.good = na.omit(Freedman)
+summary(Freedman.good)
+
+#Filter Na 
+Freedman_notav = Freedman[!complete.cases(Freedman),]
+
+
+#23
+#dynamic selection of columns
+DF_1 = data.frame(
+  empTD = c(data_1$EMPLOYEE_ID),
+  name = c(data_1$FIRST_NAME),
+  sal = c(data_1$SALARY)
+)
+
+#exclude a Outlier
+library(UsingR)
+x = babies$dwt
+head(x)
+#range of dataset 
+x[4:8]
+summary(x)
+#replace 999 outlier
+x[x==999]=NA
+range(x, na.rm=T)
+dim(x)
