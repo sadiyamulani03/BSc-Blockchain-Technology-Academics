@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FY/Sem-1/Solidity/If-Else/2.sol": "GradingSy"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FY/Sem-1/Solidity/If-Else/2.sol": {
+			"keccak256": "0x55247e5d0c774ed9ac28a7aefb2a92721c7b8291d39c3e5ca79f4c57053217aa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a3ca84a18f2f66b5a98a33853183282f725fd1b0b97b2cf809a6fda40caf3476",
+				"dweb:/ipfs/QmeGw8KUdmxoYykxkXCxUFfsLxD2L72VKoz6x9e8qaWfhv"
+			]
+		}
+	},
+	"version": 1
+}

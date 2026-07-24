@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "n",
+						"type": "uint256"
+					}
+				],
+				"name": "createTable",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FY/Sem-1/Solidity/WhileLoop/1.sol": "Co"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FY/Sem-1/Solidity/WhileLoop/1.sol": {
+			"keccak256": "0x4bffb24c8a183948edd4e8eb50b132cd352bfa3c7469375789db088b64158078",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b69f8e46e8a065ece7b835b8a4a3e48188ab5e96617076a1eda56c4490a23e80",
+				"dweb:/ipfs/QmYnEBeeeXMCrHjiBP3eE9DPhdkDTa9v8UXmGXQ48N8ofB"
+			]
+		}
+	},
+	"version": 1
+}

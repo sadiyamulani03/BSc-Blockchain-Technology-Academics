@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FY/Sem-1/Solidity/ForLoop/2.sol": "TableGe"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FY/Sem-1/Solidity/ForLoop/2.sol": {
+			"keccak256": "0x1c2e409257d78c51138d71f4c88af9e75f1a987697d043bfae4428194ff88e19",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f7cd4956e8864c2272967a5022fe3c7dba797693a54c4650f12bafb985d622f8",
+				"dweb:/ipfs/QmSHAh4D1PxUwvTPbPENw5FC4QNMWbAjkM3srfx13QNDXt"
+			]
+		}
+	},
+	"version": 1
+}

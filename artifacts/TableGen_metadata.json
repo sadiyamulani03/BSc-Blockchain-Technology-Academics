@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FY/Sem-1/Solidity/ForLoop/2.sol": "TableGen"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FY/Sem-1/Solidity/ForLoop/2.sol": {
+			"keccak256": "0x04693c954d6c1f2e5f5751829653ab8d605dca1fc1c177f03b2e461b2f8838db",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4ec4ae4ed12ef0d8207fe3fdbea42517d1b2521028faaeb0ee16feb03c8a8422",
+				"dweb:/ipfs/QmcwgGSzZhCtyt1UC5kkiFWR7x9x48UbM8mHXKzf3UHPy6"
+			]
+		}
+	},
+	"version": 1
+}

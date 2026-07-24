@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FY/Sem-1/Solidity/If-Else/5.sol": "EvenOdd"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FY/Sem-1/Solidity/If-Else/5.sol": {
+			"keccak256": "0x8003666fb838d1a3535095e98dd0e2d3162858d9a4ef4a8b7615c37dd9922d69",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://04d3eed2e9df7db297047e5d4ab9d952ba1edfe16aeeedab1f450ca3bdcef9f3",
+				"dweb:/ipfs/QmUeroyemJL9dLrh5F9UaJMtR8McTDroQz4RomvLvtTdtg"
+			]
+		}
+	},
+	"version": 1
+}
