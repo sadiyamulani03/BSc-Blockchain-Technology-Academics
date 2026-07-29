@@ -1,0 +1,36 @@
+# Q1 Write an R script that initializes three variables adhering strictly to R variable naming conventions Inspect and print the data class of each variable using class(). • network_name: Stores the string "Ethereum Mainnet".
+network_name <- "Ethereum Mainnet"
+class(network_name)
+
+#eth_price_usd: Stores the decimal price 3450.75.
+eth_price_usd <-  3450.75
+class(eth_price_usd)
+
+#min_stake_required: Stores the integer whole number 32L.
+min_stake_required <- 32L
+class(min_stake_required)
+
+# Q2 Identify and correct all syntax errors in the broken code snippet below so it executes cleanly:
+# Broken Code Snippet
+#brokencode 1st_validator <- "Node_Alpha" 
+first_Validator <- "Node_Alpha"
+
+#brokencode gas limit <- 21000L
+gas_limit <- 21000L
+
+#brokencode is_active <- true
+is_active <- TRUE
+
+#brokencode Calculated_Fee = 45.5 * gas limit
+Calculated_Fee = 45.5 * gas_limit
+
+# Q3 Create an interactive script that does the following:
+#1. Uses readline() to prompt a user to enter their current wallet token balance.
+#2. Converts the entered text string into a Numeric data type using as.numeric().
+token_balance = as.numeric(readline("Enter current wallet token balance:"))
+
+#3. Subtracts a baseline network gas fee of 12.5 tokens from the balance.
+balance <- token_balance - 12.5 
+
+#4. Uses an if-else statement to print whether the transaction is approved (balance >= 12.5) or rejected due to insufficient funds.
+ifelse(balance >= 12.5, print("transaction approved"), print("Transaction rejected due to insufficient funds"))
