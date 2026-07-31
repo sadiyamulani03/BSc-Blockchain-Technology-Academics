@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "salary",
+						"type": "uint256"
+					}
+				],
+				"name": "chkEligibility",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"If-Else/4.sol": "LoanEligibility"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"If-Else/4.sol": {
+			"keccak256": "0x1fd2a3bac0e1f4b4f7890b29e90d74d23ad9de577d1b4d854c4781d5abcb43cd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1be85984d6ee0897bdfd5d961fbd41b8043a94902cb8d15fe28c06a437156895",
+				"dweb:/ipfs/QmU1hDp6ejiKNCMouQ7FS4WWUe81e8Wf2wPbFsA8WDBSfc"
+			]
+		}
+	},
+	"version": 1
+}

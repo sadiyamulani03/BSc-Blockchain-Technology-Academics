@@ -1,3 +1,8 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
 # Q1 Write an R script that initializes three variables adhering strictly to R variable naming conventions Inspect and print the data class of each variable using class(). • network_name: Stores the string "Ethereum Mainnet".
 network_name <- "Ethereum Mainnet"
 class(network_name)

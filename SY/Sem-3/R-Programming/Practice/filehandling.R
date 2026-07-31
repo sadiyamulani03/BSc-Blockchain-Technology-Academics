@@ -18,7 +18,7 @@ head(data_1 ,3)
 str(data_1)
 colnames(data_1)
 
-#21
+#21/7
 #Subset of dataset is a filtered dataset.
 subset(data_1,EMPLOYEE_ID>25)
 
@@ -41,7 +41,7 @@ x > 2 & !is.na(x)
 !is.na(x)
 (x==0 | X==2) & !is.na(x)
 
-#22
+#22/7
 
 #values from 1 to 100
 g=c(1:100)
@@ -83,11 +83,11 @@ max(freedman$population, na.rm=T)
 Freedman.good = na.omit(Freedman)
 summary(Freedman.good)
 
-#Filter Na 
+#Filter Na (complete cases)
 Freedman_notav = Freedman[!complete.cases(Freedman),]
 
 
-#23
+#23/7
 #dynamic selection of columns
 DF_1 = data.frame(
   empTD = c(data_1$EMPLOYEE_ID),
@@ -109,7 +109,7 @@ x[x==999]=NA
 range(x, na.rm=T)
 dim(x)
 
-#24
+#24/7
 newemp1 = data[2,2]
 newemp1
 exmpdata = data
@@ -127,3 +127,32 @@ dim(babies)
 str(babies)
 x = babies$dwt
 x[4:8]
+
+#30/7
+#import observation from one dataset from another dataset (rbind)
+library(car)
+head(Freedman)
+freedman_1 = rbind.data.frame(freedman, freedman[1:50, ])# this space after 50 an comma will not effect other columns 
+dim(freedman_1)
+
+#for unique values only
+freedman_2 = unique(freedman_1)
+dim(freedman_2)
+
+#selecting columns and rows in bunch
+head(iris)
+
+#one column
+iris[,3]
+head(iris[,3])
+
+#two subsiquent columns (use range)
+iris[,3:5]
+head(iris[,3:5])
+
+#two non-subsiquent columns (use vector)
+iris[,c(3,5)]
+head(iris[,c(3,5)])
+
+#viewing end data 
+tail(iris)

@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "applyDiscount",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"If-Else/3.sol": "DiscountShop"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"If-Else/3.sol": {
+			"keccak256": "0x2bfb625282c98ad0725b695421810d10bcc893495e5af93e2ff4b2e3f579f35a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b82164882d71856311c704fa9ba9f6e143184950b8871fd054826d0199091d0d",
+				"dweb:/ipfs/QmToKZFaGpyen9rMhyGNLypGEiE1LRxSbk9RND8GxB4NhL"
+			]
+		}
+	},
+	"version": 1
+}

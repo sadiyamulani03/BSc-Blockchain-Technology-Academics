@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "n",
+						"type": "uint256"
+					}
+				],
+				"name": "sum",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ForLoop/1.sol": "NumberSum"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ForLoop/1.sol": {
+			"keccak256": "0xe1128fec44a1c603ce243fc7c336786165512854da167d5719c4193323d3e543",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1b8da4c6770e1dafc100499acbb3be48e4b486e08b51eef870c833f5d1b85286",
+				"dweb:/ipfs/QmQCJx7PkKVBSsNDRUHj1773AoaovE3hXXdAEH4Kx8Wvdp"
+			]
+		}
+	},
+	"version": 1
+}

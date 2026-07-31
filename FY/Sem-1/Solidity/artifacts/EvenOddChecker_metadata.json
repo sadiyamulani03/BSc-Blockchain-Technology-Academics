@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "n",
+						"type": "uint256"
+					}
+				],
+				"name": "evenOdd",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"If-Else/5.sol": "EvenOddChecker"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"If-Else/5.sol": {
+			"keccak256": "0x12526863dc5e890bc0885f6451d670af0cb150eea7b4281c93db3c7d2888231a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://90ca0ed26587987d10414f25a1c6d9cfff57449563ef5d3699bee202e3bd3079",
+				"dweb:/ipfs/QmUuBiZzsUECFmnkwikAEAtwNeWubUzhdamoH43naDKmy5"
+			]
+		}
+	},
+	"version": 1
+}
