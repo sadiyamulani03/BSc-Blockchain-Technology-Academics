@@ -140,6 +140,7 @@ freedman_2 = unique(freedman_1)
 dim(freedman_2)
 
 #selecting columns and rows in bunch
+dim(iris)
 head(iris)
 
 #one column
@@ -156,3 +157,25 @@ head(iris[,c(3,5)])
 
 #viewing end data 
 tail(iris)
+
+#3/8/26
+#subsiquent rows
+iris[20:50, 3:5]
+colnames(iris)
+#many
+iris[,c("Species","Sepal.Length")]
+#one
+iris[,"Species"]
+#creating new variable
+iris$Petal.Ratio = iris$Petal.Length/iris$Petal.Width
+#ratio of lenght and width
+iris$Sepal.Ratio = iris$Sepal.Length/iris$Sepal.Width
+
+#extraction of observations using row and column and condition 
+iris$Petal.Width
+range(iris$Petal.Width)
+iris[iris$Petal.Width>0.3 & iris$Species=="setosa",]
+iris[iris$Petal.Width>2.3 & iris$Species=="virginica",]
+
+#extraction of observations using subset
+subset(iris, Petal.Width>0.5 & Species=="setosa")
