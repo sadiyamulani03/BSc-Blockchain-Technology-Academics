@@ -54,3 +54,7 @@ typeof(gender)
 fgen = as.factor(gender)
 fgen
 summary(fgen)
+
+#8/5
+shirt_sizes = c("L","M","L","S","S","L","S","M")
+size_factor = factor(shirt_sizes)

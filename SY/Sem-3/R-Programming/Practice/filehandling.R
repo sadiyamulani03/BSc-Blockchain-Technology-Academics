@@ -179,3 +179,29 @@ iris[iris$Petal.Width>2.3 & iris$Species=="virginica",]
 
 #extraction of observations using subset
 subset(iris, Petal.Width>0.5 & Species=="setosa")
+
+#creation 
+library(Davis)
+dim(Davis)
+
+
+#5/8
+#Factors are specialiesd data structure used to handle categorycle variables which represents data with fixed and limited set of unique values
+#Working with factor variables
+
+library(UsingR)
+summary(Cars93)
+head(Cars93)
+
+d=Cars93[1:3, 1:4]
+d
+str(d)
+
+d[3,2] = "A3"
+d[3,4] = 40
+class(d$Model)
+levels(d$Model)
+d$Model = droplevels(d$Model)
+levels(d$Model)=c(levels(d$Model) , c("A3","A4","A5"))
+d[3, c(2,4)] = list("A3", 40)
+d[4,] = list("Audi","A4","Small",35)
