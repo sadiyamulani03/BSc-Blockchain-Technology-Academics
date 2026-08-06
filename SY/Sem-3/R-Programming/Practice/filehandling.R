@@ -186,12 +186,16 @@ dim(Davis)
 
 
 #5/8
-#Factors are specialiesd data structure used to handle categorycle variables which represents data with fixed and limited set of unique values
+#Factors are specialised data structure used to handle categorycle data which represents data with fixed and predefined set of unique values they are highly efficient because r stores them as a integer array map to a second array of text lables known as levels
 #Working with factor variables
 
 library(UsingR)
 summary(Cars93)
 head(Cars93)
+dim(Cars93)
+str(Cars93)
+colnames(Cars93)
+range(Cars93$Passengers)
 
 d=Cars93[1:3, 1:4]
 d
@@ -201,7 +205,15 @@ d[3,2] = "A3"
 d[3,4] = 40
 class(d$Model)
 levels(d$Model)
+
+#droplevel is used to remove the levels, it will flush out the levels which are in the dataset
 d$Model = droplevels(d$Model)
 levels(d$Model)=c(levels(d$Model) , c("A3","A4","A5"))
 d[3, c(2,4)] = list("A3", 40)
 d[4,] = list("Audi","A4","Small",35)
+#add observation through rbind()
+rbind.data.frame(d.list("Audi","A4","Midsize",35))
+#new column
+d$modprice = d$Min.Price*1.3
+#replacing column name
+head(d$modprice)
