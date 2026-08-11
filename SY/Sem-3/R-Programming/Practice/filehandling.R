@@ -217,3 +217,17 @@ rbind.data.frame(d.list("Audi","A4","Midsize",35))
 d$modprice = d$Min.Price*1.3
 #replacing column name
 head(d$modprice)
+
+#10/8
+head(\iris)
+str(iris)
+
+i = iris
+tail(iris)
+tail(i)
+#add species:-
+levels(i$Species) = c(levels(i$Species), c("Conflower"))
+levels(i$species) = droplevels(i$Species)
+rbind.data.frame(d.list(""))
+i[151, ] = list(6.7, 3.0, 5.2, 1.8, "Conflower")
+#further:- Data Visualization:- line, bar Plot...
