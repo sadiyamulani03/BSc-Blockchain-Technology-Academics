@@ -8,5 +8,5 @@ document.write(student.id+" "+student.name + " " + student.percentage)
 
 //for in 
 for(let key in student){
-    document.write(key + " " + student[key]+" ")
+    document.write(key + ": " + student[key]+" ")
 }
