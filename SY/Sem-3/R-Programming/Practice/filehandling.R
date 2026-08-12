@@ -219,7 +219,7 @@ d$modprice = d$Min.Price*1.3
 head(d$modprice)
 
 #10/8
-head(\iris)
+head(iris)
 str(iris)
 
 i = iris
@@ -231,3 +231,18 @@ levels(i$species) = droplevels(i$Species)
 rbind.data.frame(d.list(""))
 i[151, ] = list(6.7, 3.0, 5.2, 1.8, "Conflower")
 #further:- Data Visualization:- line, bar Plot...
+
+#12/8
+#Data Visualization:-
+
+Gasoline_price <- read.csv()
+head(Gasoline_price)
+
+weekly_gasoline_prices=Gasoline_price
+str(weekly_gasoline_prices)
+
+#type conversion to date
+weekly_gasoline_prices$Data = as.Date(weekly_gasoline_prices$Data, format = "%m-%d-%Y")
+
+plot(weekly_gasoline_prices, type = "l", main = "time-serie weekly", )
+
