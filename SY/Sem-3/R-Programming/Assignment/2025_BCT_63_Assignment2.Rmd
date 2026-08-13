@@ -1,0 +1,210 @@
+---
+title: "2025_BCT_63_Assignment2"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r}
+rm(list = ls())
+
+```
+
+Question 1
+
+Dataset/Structure: Vectors in Base R
+
+Concepts: NA values, Vectorized Comparisons, Logical Indexing
+
+Write an R script that performs the following steps:
+
+1\. Create a numeric vector observation_scores containing the values:
+12, NA, 45, 8, NA, 67, 23, 0, -5, NA, 89.
+
+```{r}
+observation_scores = c(12, NA, 45, 8, NA, 67, 23, 0, -5, NA, 89)
+```
+
+#2. Write a single logical expression to identify indices that are not
+missing AND are strictly greater than 15.
+
+```{r}
+!is.na(observation_scores) & observation_scores > 15
+```
+
+#3. Replace all NA values in observation_scores with the calculated
+median of the non-missing elements.
+
+```{r}
+sum(observation_scores, na.rm=T)/11 
+observation_scores[is.na(observation_scores)]=21.72727
+```
+
+#4. Print the final modified vector along with a text message stating
+its new mean.
+
+```{r}
+print(mean(observation_scores))
+```
+
+Question 2
+
+Dataset/Structure: Special Values (Inf, -Inf, NaN)
+
+Concepts: Indeterminate Forms, Boundary Arithmetic, Testing Functions
+
+1\. Write an R code snippet that computes and prints the results of the
+following four mathematical operations:
+
+○ $0 / 0$
+
+```{r}
+nan_ex <- 0/0
+```
+
+#○ $45 / 0$
+
+```{r}
+inf_ex <- 45/0
+```
+
+#○ $-12 / 0$
+
+```{r}
+neg_inf_ex <- -12/0
+```
+
+#○ $\log(0)$
+
+```{r}
+log_ex <-log(0)
+```
+
+#2. Use the built-in functions is.na(), is.nan(), and is.infinite() to
+test each of the four results. #3. Display the results in a structured
+tabular output or clear console logs, and write a brief comment
+explaining why is.na() returns TRUE for NaN values in R.
+
+```{r}
+is.na(nan_ex) 
+is.nan(nan_ex) 
+is.infinite(nan_ex)
+
+is.na(inf_ex) 
+is.nan(inf_ex) 
+is.infinite(inf_ex)
+
+is.na(neg_inf_ex) 
+is.nan(neg_in_fex) 
+is.infinite(neg_in_fex)
+
+is.na(log_ex) 
+is.nan(log_ex) 
+is.infinite(log_ex)
+```
+
+Question 3
+
+Dataset/Structure: Base R Dataset airquality
+
+Concepts: Data Inspection, Missing Value Profiling, Column-wise NA
+Counting
+
+Load the built-in airquality dataset and perform the following analysis:
+
+1\. Inspect the total dimensions (rows and columns) of airquality.
+
+```{r}
+library(airqualityES) 
+airquality <- airqualityES 
+dim(airquality)
+```
+
+#2. Calculate the total number of NA values present in the entire
+dataset.
+
+```{r}
+sum(is.na(airquality))
+```
+
+#3. Calculate the number of NA values present in each individual column
+(Ozone, Solar.R, Wind, Temp, Month, Day).
+
+```{r}
+sum(is.na(airquality$Ozone))
+sum(is.na(airquality$Solar.R)) 
+sum(is.na(airquality$Wind))
+sum(is.na(airquality$Temp)) 
+sum(is.na(airquality$Month))
+sum(is.na(airquality$Day))
+```
+
+#4. Calculate the mean of the Ozone column without removing NA values,
+observe the output, and then calculate the correct mean by explicitly
+stripping NA values using na.rm = TRUE.
+
+```{r}
+mean(airquality) 
+mean(airquality$Ozone, na.rm=TRUE) 
+```
+
+Question 4
+
+Dataset/Structure: Base R Dataset airquality
+
+Concepts: complete.cases(), na.omit(), Dataset Subsetting
+
+1\. Using the airquality dataset, extract all rows that contain at least
+one missing value (NA) using the !complete.cases() function and store
+them in a new data frame called air_incomplete. Print the first 6 rows
+of air_incomplete.
+
+```{r}
+dim(airquality)
+
+!complete.cases(airquality)
+air_incomplete <- airquality[!complete.cases(airquality),]
+head(air_incomplete)
+```
+
+2\. Create a fully clean dataset called air_clean by removing all rows
+containing missing values using na.omit().
+
+```{r}
+air_clean <- na.omit(airquality)
+```
+
+3\. Verify that the sum of the row counts of air_incomplete and
+air_clean exactly equals the total number of rows in the original
+airquality dataset.
+
+```{r}
+row(air_incomplete + air_clean)
+row(airquality)
+```
+
+Section B: Subsetting, Deduplication & Data Manipulation (Total Marks:
+30 Marks \| 10 Marks Each) Question 5
+
+Dataset/Structure: Base R Dataset mtcars
+
+Concepts: Subsetting using Bracket Notation [row, col], Logical
+Conditions, Indexing Load the built-in mtcars dataset and write an R
+script to extract the following subsets using bracket indexing [ , ]:
+
+1\. Extract rows 5 through 15 and columns 1 through 4 (mpg, cyl, disp,
+hp).
+
+```{r}
+library(car)
+```
+
+2\. Extract all cars (rows) that have a gas mileage (mpg) greater than
+20.0 AND possess more than 100 horsepower (hp).
+
+3\. Extract only the mpg and wt columns for vehicles with an 8-cylinder
+engine (cyl == 8).
+
+4\. Calculate the average weight (wt) of cars that have a automatic
+transmission (am == 0) versus manual transmission (am == 1).
