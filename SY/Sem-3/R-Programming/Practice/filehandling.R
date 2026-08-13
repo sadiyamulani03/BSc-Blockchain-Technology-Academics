@@ -246,3 +246,19 @@ weekly_gasoline_prices$Data = as.Date(weekly_gasoline_prices$Data, format = "%m-
 
 plot(weekly_gasoline_prices, type = "l", main = "time-serie weekly", )
 
+Library(Zoo)
+wpg=zoo(weekly_gasoline_prices..Dollars.per.Gallon)
+
+#13/8
+barplot(wpg1,
+        ylab = "quartly prices", 
+        xlab = "dates",
+        col = "Blue",
+        main = "quartly prices of gasoline",
+        border = "red")
+
+head(wpg1)
+
+Nations = read.csv("nations_dataset.csv")
+head(Nations)
+str(Nations)
