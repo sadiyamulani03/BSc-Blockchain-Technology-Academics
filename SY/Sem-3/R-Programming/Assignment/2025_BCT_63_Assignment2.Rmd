@@ -8,7 +8,6 @@ editor_options:
 
 ```{r}
 rm(list = ls())
-
 ```
 
 Question 1
@@ -87,21 +86,21 @@ tabular output or clear console logs, and write a brief comment
 explaining why is.na() returns TRUE for NaN values in R.
 
 ```{r}
-is.na(nan_ex) 
-is.nan(nan_ex) 
-is.infinite(nan_ex)
+is.na(nan_ex) #is.na(nan_ex) returns True because in R, the is.na() function is designed to detect both missing values (NA) and undefined numeric results (NaN).
+is.nan(nan_ex) #is.nan(nan_ex) returns TRUE only if the variable nan_ex contains the specific numeric value NaN ("Not a Number").
+is.infinite(nan_ex)#is.infinite(nan_ex) returns FALSE because NaN ("Not a Number") is mathematically distinct from infinity.
 
-is.na(inf_ex) 
-is.nan(inf_ex) 
-is.infinite(inf_ex)
+is.na(inf_ex) #is.na(inf_ex) returns FALSE because infinity (Inf) is a defined, valid numeric value in R, not a missing or undefined result.
+is.nan(inf_ex) #is.nan(inf_ex) returns FALSE because infinity (Inf) is a defined numeric limit, whereas NaN stands for "Not a Number" representing an undefined result.
+is.infinite(inf_ex) #is.infinite(inf_ex) returns TRUE because the variable inf_ex contains the value Inf (infinity), which is exactly what this function is designed to detect.
 
-is.na(neg_inf_ex) 
-is.nan(neg_in_fex) 
-is.infinite(neg_in_fex)
+is.na(neg_inf_ex) #is.na(neg_inf_ex) returns FALSE because negative infinity (-Inf) is a defined, valid numeric value in R, not a missing or undefined result.
+is.nan(neg_inf_ex) #is.nan(neg_inf_ex) returns FALSE because negative infinity (-Inf) is a defined numeric limit, whereas NaN stands for "Not a Number" representing an undefined result.
+is.infinite(neg_inf_ex) #is.infinite(neg_inf_ex) returns TRUE because the variable neg_inf_ex contains the value -Inf (negative infinity), which this function is specifically designed to detect.
 
-is.na(log_ex) 
-is.nan(log_ex) 
-is.infinite(log_ex)
+is.na(log_ex) #is.na(log_ex) returns FALSE because the variable log_ex contains a defined numeric value, not a missing (NA) or undefined (NaN) result.
+is.nan(log_ex) #is.nan(log_ex) returns FALSE because the value stored in log_ex is not "Not a Number" (NaN).
+is.infinite(log_ex) #is.infinite(log_ex) returns TRUE because the variable log_ex contains the value -Inf (negative infinity).
 ```
 
 Question 3
@@ -117,7 +116,6 @@ Load the built-in airquality dataset and perform the following analysis:
 
 ```{r}
 library(airqualityES) 
-airquality <- airqualityES 
 dim(airquality)
 ```
 
@@ -180,31 +178,318 @@ air_clean exactly equals the total number of rows in the original
 airquality dataset.
 
 ```{r}
-row(air_incomplete + air_clean)
-row(airquality)
+total_original <- nrow(airquality)
+total_split <- nrow(air_incomplete) + nrow(air_clean)
+
+# Check equality
+total_original == total_split   
 ```
 
 Section B: Subsetting, Deduplication & Data Manipulation (Total Marks:
-30 Marks \| 10 Marks Each) Question 5
+30 Marks \| 10 Marks Each)
+
+Question 5
 
 Dataset/Structure: Base R Dataset mtcars
 
 Concepts: Subsetting using Bracket Notation [row, col], Logical
-Conditions, Indexing Load the built-in mtcars dataset and write an R
-script to extract the following subsets using bracket indexing [ , ]:
+Conditions, Indexing Load the built-in\
+dataset and write an R script to extract the following subsets using
+bracket indexing [ , ]:
 
 1\. Extract rows 5 through 15 and columns 1 through 4 (mpg, cyl, disp,
 hp).
 
 ```{r}
 library(car)
+head(mtcars)
+mtcars[5:15,1:4]
 ```
 
 2\. Extract all cars (rows) that have a gas mileage (mpg) greater than
 20.0 AND possess more than 100 horsepower (hp).
 
+```{r}
+mpd_hp <- subset(mtcars, mpg > 20.0 & hp > 100)
+```
+
 3\. Extract only the mpg and wt columns for vehicles with an 8-cylinder
 engine (cyl == 8).
 
+```{r}
+mpg_wt_cyl <- subset(mtcars, cyl == 8, select = c(mpg, wt))
+```
+
 4\. Calculate the average weight (wt) of cars that have a automatic
 transmission (am == 0) versus manual transmission (am == 1).
+
+```{r}
+avg_wt_by_am <- aggregate(wt ~ am, data = mtcars, FUN = mean)
+```
+
+Question 6 Dataset/Structure: Base R Dataset ToothGrowth
+
+Concepts: subset() Function, Multi-Condition Filtering, Column Selection
+Load the ToothGrowth dataset (which measures tooth growth in guinea pigs
+based on Vitamin C delivery method and dosage) and perform the following
+tasks:
+
+1\. Display the structure (str()) and summary statistics (summary()) of
+ToothGrowth.
+
+```{r}
+head(ToothGrowth)
+str(ToothGrowth)
+summary(ToothGrowth)
+```
+
+2\. Use the subset() function to filter observations where the
+supplement type (supp) is equal to "VC" (Ascorbic Acid) AND the dose
+(dose) is strictly greater than or equal to 1.0.
+
+```{r}
+sup_dose <- subset(ToothGrowth, supp == "VC" & dose >= 1.0)
+```
+
+3\. Use the subset() function to extract only the tooth length (len)
+column for animals that received the "OJ" (Orange Juice) supplement at a
+dose of 0.5.
+
+```{r}
+tooth_len <- subset(ToothGrowth, supp == "OJ" & dose == 0.5, select = len)
+```
+
+4\. Calculate the mean tooth length for the "VC" group versus the "OJ"
+group at a 2.0 dose level using subset() and mean().
+
+```{r}
+mean_oj_2 <- mean(subset(ToothGrowth, supp == "OJ" & dose == 2.0)$len)
+
+mean_vc_2 <- mean(subset(ToothGrowth, supp == "VC" & dose == 2.0)$len)
+```
+
+Question 7
+
+Dataset/Structure: Base R Dataset chickwts / Artificially Duplicated
+Frame Concepts: Dataset Duplication, Row Stacking rbind(), unique(),
+duplicated()
+
+1\. Load the built-in chickwts dataset and display its original
+dimensions using dim().
+
+```{r}
+dim(chickwts)
+```
+
+2.  Create an artificially duplicated data frame named chick_duplicated
+    by binding the first 40 rows of chickwts onto the original dataset
+    using rbind().
+
+```{r}
+chick_duplicated = rbind.data.frame(chickwts, chickwts[1:40,])
+```
+
+3.  Display the dimensions of chick_duplicated and calculate the exact
+    number of duplicated rows present using
+    sum(duplicated(chick_duplicated)).
+
+```{r}
+dim(chick_duplicated)
+sum(duplicated(chick_duplicated))
+```
+
+4.  Create a clean data frame named chick_restored by stripping out all
+    duplicate rows using the unique() function.
+
+```{r}
+chick_restored = unique(chick_duplicated)
+```
+
+5\. Use an if-else block to programmatically check and print whether
+dim(chick_restored) matches the dimensions of the original chickwts
+dataset.
+
+```{r}
+if (dim(chick_restored)[1] == dim(chickwts)[1] && 
+    dim(chick_restored)[2] == dim(chickwts)[2]) {
+  print("The sizes match")
+}
+```
+
+Section C: Feature Engineering & Data Restructuring (Total Marks: 25
+Marks)
+
+Question 8 (10 Marks) Dataset/Structure: Base R Dataset iris Concepts:
+Derived Variables, Computed Ratios, Data Frame Column Creation Load the
+built-in iris dataset and complete the following feature engineering
+pipeline:
+
+1\. Print the column names of iris using colnames().
+
+```{r}
+colnames(iris)
+```
+
+2\. Create a new derived column in iris named Petal.Ratio calculated as:
+$$\text{Petal.Ratio} = \frac{\text{Petal.Length}}{\text{Petal.Width}}$$
+
+```{r}
+iris$Petal.Ratio = iris$Petal.Length/iris$Petal.Width
+```
+
+3.  Create a second derived column named Sepal.Ratio calculated as:
+    $$\text{Sepal.Ratio} = \frac{\text{Sepal.Length}}{\text{Sepal.Width}}$$
+
+```{r}
+iris$Sepal.Ratio = iris$Sepal.Length/iris$Sepal.Width
+```
+
+4.  Extract all observations where Petal.Ratio \> 3.0 AND Species ==
+    "virginica".
+
+```{r}
+iris[iris$Petal.Ratio>3.0 & iris$Species=="virginica",]
+```
+
+5\. Display the first 10 rows of the updated iris dataset showing only
+the columns: Species, Petal.Ratio, and Sepal.Ratio.
+
+```{r}
+iris[1:10, 6:7]
+```
+
+Question 9 (15 Marks) Dataset/Structure: Package car Dataset Davis (or
+base equivalent matrix mapping) Concepts: Empty Matrix/Frame
+Pre-allocation, Dimension Mapping, Data Transfer, Reshaping Write an R
+script that manually restructures data frame architectures without using
+third-party auto-converters:
+
+1.  Load the Davis dataset from the car package (or construct a raw
+    sample frame if car is unavailable). Display its first 6 rows using
+    head().
+
+```{r}
+library(car)
+head(Davis)
+```
+
+2\. Programmatically determine the number of rows ($N$) and columns
+($M$) of the input dataset using dim().
+
+```{r}
+dim(Davis)
+```
+
+3\. Pre-allocate an empty target data frame named restructured_output
+initialized with an empty matrix of dimensions $N \times M$ using:
+data.frame(matrix(nrow = N, ncol = M))
+
+```{r}
+N <- nrow(Davis)
+M <- 5
+restructured_output = data.frame(matrix(nrow = N, ncol = M))
+```
+
+4\. Assign custom, clean column names to restructured_output:
+"Subject_Gender", "Measured_Weight", "Measured_Height",
+"Reported_Weight", "Reported_Height".
+
+```{r}
+colnames(restructured_output) <- c("Subject_Gender", "Measured_Weight", "Measured_Height","Reported_Weight", "Reported_Height")
+```
+
+5\. Systematically transfer data from the original dataset columns into
+the newly named columns of restructured_output.
+
+```{r}
+restructured_output$Subject_Gender   <- Davis$gender
+restructured_output$Measured_Weight  <- Davis$measured_weight
+restructured_output$Measured_Height  <- Davis$measured_height
+restructured_output$Reported_Weight  <- Davis$reported_weight
+restructured_output$Reported_Height  <- Davis$reported_height
+```
+
+6\. Add a computed column Weight_Discrepancy calculated as
+Measured_Weight - Reported_Weight.
+
+```{r}
+restructured_output$Weight_Discrepancy <- restructured_output$Measured_Weight - restructured_output$Reported_Weight
+```
+
+7\. Omit all NA rows from restructured_output using na.omit() and
+display the summary() of the final cleaned data frame.
+
+```{r}
+final_clean_data <- na.omit(restructured_output)
+summary(final_clean_data)
+```
+
+Section D: Aggregation & Summary Pipelines with dplyr (Total Marks: 25
+Marks)
+
+Question 10 (10 Marks) Dataset/Structure: Base R Dataset mtcars
+Concepts: library("dplyr"), Data Aggregation, summarize()
+
+1\. Install (if required) and load the dplyr package using
+library("dplyr").
+
+```{r}
+library(dplyr)
+```
+
+2\. Using the summarize() function from dplyr on the built-in mtcars
+dataset, calculate a baseline summary report containing: ○ The mean of
+mpg (miles per gallon) ○ The mean of hp (horsepower) ○ The standard
+deviation (sd) of mpg ○ The standard deviation (sd) of hp
+
+```{r}
+summary(mtcars)
+```
+
+3. Store the output in a data frame named mtcars_overall_summary and
+print it with formatted column names.
+
+```{r}
+mtcars_overall_summary  = summary(mtcars)
+print(colnames(mtcars_overall_summary ))
+```
+
+Question 11 (15 Marks) Dataset/Structure: Base R Dataset iris Concepts:
+Multi-column Summarization, Group-wise Analysis, dplyr Pipeline Write an
+R script using dplyr methods to perform data summary tasks:
+
+1\. Using the iris dataset, apply summarize() to compute: ○
+Mean_Petal_Length = mean(Petal.Length) ○ SD_Petal_Length =
+sd(Petal.Length) ○ Mean_Sepal_Length = mean(Sepal.Length) ○
+SD_Sepal_Length = sd(Sepal.Length)
+
+```{r}
+summary(iris)
+Mean_Petal_Length = mean(iris$Petal.Length)
+SD_Petal_Length = sd(iris$Petal.Length)
+Mean_Sepal_Length = mean(iris$Sepal.Length)
+SD_Sepal_Length = sd(iris$Sepal.Length)
+```
+
+2\. Group the iris dataset by Species and calculate the mean and
+standard deviation of Petal.Length for each species separately.
+
+```{r}
+iris_summary <- iris %>%
+  group_by(Species) %>%
+  summarise(
+    Mean_Petal_Length = mean(Petal.Length),
+    SD_Petal_Length = sd(Petal.Length)
+  )
+
+```
+
+3\. Identify which species exhibits the highest average Petal.Length and
+print a formatted conclusion sentence displaying the result.
+
+```{r}
+result <- iris %>%
+  group_by(Species) %>%
+  summarise(Mean_Petal_Length = mean(Petal.Length)) %>%
+  slice_max(Mean_Petal_Length, n = 1)
+```
