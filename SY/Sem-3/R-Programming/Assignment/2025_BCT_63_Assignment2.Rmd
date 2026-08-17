@@ -446,8 +446,8 @@ deviation (sd) of mpg ○ The standard deviation (sd) of hp
 summary(mtcars)
 ```
 
-3. Store the output in a data frame named mtcars_overall_summary and
-print it with formatted column names.
+3.  Store the output in a data frame named mtcars_overall_summary and
+    print it with formatted column names.
 
 ```{r}
 mtcars_overall_summary  = summary(mtcars)

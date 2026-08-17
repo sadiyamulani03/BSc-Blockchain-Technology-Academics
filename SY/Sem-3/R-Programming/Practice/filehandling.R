@@ -231,34 +231,3 @@ levels(i$species) = droplevels(i$Species)
 rbind.data.frame(d.list(""))
 i[151, ] = list(6.7, 3.0, 5.2, 1.8, "Conflower")
 #further:- Data Visualization:- line, bar Plot...
-
-#12/8
-#Data Visualization:-
-
-Gasoline_price <- read.csv()
-head(Gasoline_price)
-
-weekly_gasoline_prices=Gasoline_price
-str(weekly_gasoline_prices)
-
-#type conversion to date
-weekly_gasoline_prices$Data = as.Date(weekly_gasoline_prices$Data, format = "%m-%d-%Y")
-
-plot(weekly_gasoline_prices, type = "l", main = "time-serie weekly", )
-
-Library(Zoo)
-wpg=zoo(weekly_gasoline_prices..Dollars.per.Gallon)
-
-#13/8
-barplot(wpg1,
-        ylab = "quartly prices", 
-        xlab = "dates",
-        col = "Blue",
-        main = "quartly prices of gasoline",
-        border = "red")
-
-head(wpg1)
-
-Nations = read.csv("nations_dataset.csv")
-head(Nations)
-str(Nations)
