@@ -1,0 +1,6 @@
+const add = (a,b) => {  //syntax : const/let variableName=(parameter)=>{fun Body};
+    return a + b;
+};// allowcating a function to add varaible...
+const add =(a,b)=>a+b;//calling fun...
+
+//arrow function is used 
