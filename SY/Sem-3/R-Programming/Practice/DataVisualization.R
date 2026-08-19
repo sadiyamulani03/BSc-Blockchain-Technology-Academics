@@ -97,3 +97,28 @@ hist(var, xlab = "frequency", ylab="variable", col=rainbow(20),breaks = 100,
      main = "Histogram", cex.main=2, font.main=4, cex.axis =3, col.lab=("green"), 
      col.main="red",col.axis="black",cex.lab =1)
 
+#19/8
+m = hist(var, xlab="freq", ylab="varaible", col=rainbow(20), breaks = 10, main = "Histogram")
+
+text(m$mids, m$counts, labels = m$counts, adj = c(0.5, -0.5))
+
+par(mar = c(5,4,4,6+0.1)) #BLTR margin
+
+par(new = T)
+plot(density(var), lwd = 4, col="black", xlab = "", ylab = "0", axes = F, main = "")
+
+axis(4, col = "black", color.axis = "black")
+mtext("Cell density",side=4,col="black", line=4)
+
+##side by side or grouped or stacked bar plot
+library(readxl)
+Meal <- read_excel("D:/Uni/SY/Sem-3/R-Programming/employee/Meal.xlsx")
+View(Meal)
+head(Meal)
+
+Meal[c(1:3),c(2,6)]
+as.matrix(Meal[c(1:3),c(2,6)])
+barplot(as.matrix(Meal[c(1:3),c(2,6)]), col = rainbow(3), border = "white", xlab = "Price", ylab = "Number of Rest", beside = T)
+par(cex = 0.5)
+legend("topright", Meal$`Quality rating` [1:3], cex=1, fill=rainbow(3))
+

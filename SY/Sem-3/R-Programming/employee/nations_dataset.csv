@@ -1,0 +1,51 @@
+nation,status,pcap_gdp,trade_deficit,rating,outlook
+United States,Developed,62432.1,850.4,AA,Stable
+China,Developing,11450.5,-320.2,BBB,Negative
+Japan,Developed,48321.9,12.4,AA,Stable
+Germany,Developed,52140.2,-180.5,AAA,Stable
+India,Developing,7340.8,95.2,BBB,Positive
+United Kingdom,Developed,46120.5,210.4,AA,Stable
+France,Developed,43900.4,75.1,AA,Negative
+Italy,Developed,38210.1,-22.4,BBB,Stable
+Brazil,Developing,10840.6,-15.8,BB,Stable
+Canada,Developed,51400.9,10.2,AAA,Stable
+Russia,Emerging,9420.3,-35.4,B,Negative
+South Korea,Developed,41200.7,-45.1,AA,Stable
+Australia,Developed,59100.2,-28.4,AAA,Stable
+Spain,Developed,34210.8,32.1,A,Stable
+Mexico,Developing,11200.4,14.5,BBB,Stable
+Indonesia,Developing,6310.2,-11.2,BBB,Stable
+Netherlands,Developed,57400.6,-70.4,AAA,Positive
+Saudi Arabia,Developing,24100.3,-32.1,A,Stable
+Turkey,Developing,11900.1,48.3,BB,Negative
+Switzerland,Developed,85400.7,-24.8,AAA,Stable
+Taiwan,Developing,28310.4,-65.2,A,Stable
+Sweden,Developed,55210.3,-18.4,AAA,Stable
+Poland,Developing,17400.2,12.1,BBB,Positive
+Belgium,Developed,49210.8,-14.2,AAA,Stable
+Argentina,Emerging,8910.4,8.4,CCC,Negative
+Thailand,Developing,9120.3,-22.1,BBB,Stable
+Austria,Developed,51100.4,-4.2,AAA,Stable
+Iran,Emerging,4320.1,5.1,CCC,Stable
+United Arab Emirates,Developing,41300.9,-75.4,AA,Stable
+Norway,Developed,92100.5,-42.1,AAA,Stable
+Israel,Developing,42100.4,8.4,A,Stable
+Ireland,Developed,81200.3,-35.2,AA,Positive
+Philippines,Developing,5410.2,18.4,BB,Stable
+Singapore,Developed,67210.6,-42.1,AAA,Stable
+Malaysia,Developing,12300.4,-8.2,BBB,Stable
+Hong Kong,Developing,32100.8,5.1,AA,Stable
+Vietnam,Emerging,5120.3,12.4,B,Stable
+South Africa,Emerging,6410.2,10.2,BB,Negative
+Denmark,Developed,63210.4,-28.4,AAA,Stable
+Egypt,Emerging,4910.8,14.2,B,Stable
+Chile,Developing,15300.2,4.1,A,Stable
+Finland,Developed,51410.6,-12.4,AAA,Stable
+Colombia,Developing,7920.4,11.2,BB,Stable
+Romania,Developing,14310.2,8.4,BBB,Stable
+Czech Republic,Developed,26100.4,-10.2,AA,Stable
+Portugal,Developed,27410.9,14.1,A,Stable
+New Zealand,Developed,44210.3,6.2,AA,Stable
+Peru,Emerging,7120.4,-2.1,BB,Stable
+Greece,Developed,23100.6,18.4,BBB,Stable
+Qatar,Developing,68410.2,-35.4,AA,Positive
