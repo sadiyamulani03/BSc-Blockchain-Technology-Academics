@@ -122,3 +122,22 @@ barplot(as.matrix(Meal[c(1:3),c(2,6)]), col = rainbow(3), border = "white", xlab
 par(cex = 0.5)
 legend("topright", Meal$`Quality rating` [1:3], cex=1, fill=rainbow(3))
 
+#20/8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
