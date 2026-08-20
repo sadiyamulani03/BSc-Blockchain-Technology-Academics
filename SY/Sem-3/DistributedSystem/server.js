@@ -5,19 +5,19 @@ const PORT = 5000;
 
 const server=net.createServer((socket)=>{
     console.log("Client connected!");
-});
+
 socket.on('data',(data)=>{
     const message = data.toString();
     console.log("Message from Client:",message);
-    socket.write(`Server received: ${message}`);
-    
-});
+    socket.write("Hello Client! Message received.");
+     });
 socket.on('end',()=>{
     console.log("Client disconnected!");
 });
 
 socket.on('error',(err)=>{
     console.error("Socket error:", err);
+});
 });
 
 server.listen(PORT, HOST, () => {
