@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "VoteCnt",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "vote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Functions/2.sol": "VotingSystem"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Functions/2.sol": {
+			"keccak256": "0x43498159afd8e4816a9a8312f219fc4fd377fe00f97f11e12f799199c6f7140c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c88b186872a235d7f8a3329be710bb0112c777eac5dd6432531aaf5ed2605b9d",
+				"dweb:/ipfs/QmUdwQEL3eECUZM2gy8XcJhM2SoR5MvdwH5afQmSFcEdXv"
+			]
+		}
+	},
+	"version": 1
+}
