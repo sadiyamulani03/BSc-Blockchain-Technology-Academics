@@ -18,19 +18,24 @@ str(Gasoline_prices)
 head(Gasoline_prices)
 ```
 
-2. Convert the Date column from character/factor into a Date object using as.Date() with the correct format parameter ("%m-%d-%Y").
+2.  Convert the Date column from character/factor into a Date object using as.Date() with the correct format parameter ("%m-%d-%Y").
 
 ```{r}
-weekly_gasoline_prices$Data=as.Date(weekly_gasoline_prices$Data, format = "%m-%d-%Y")
+weekly_gasoline_prices = Gasoline_prices
+
+weekly_gasoline_prices$Date = as.Date(weekly_gasoline_prices$Date, format = "%m-%d-%Y")
+
+str(weekly_gasoline_prices$Date)   
 ```
 
 3\. Using library(zoo), construct a zoo time-series object named wpg indexed by the formatted Date column.
 
 ```{r}
-
+library(zoo)
+wpg=zoo(weekly_gasoline_prices..Dollars.per.Gallon)
 ```
 
-4. Use aggregate(wpg, as.yearqtr) to aggregate the prices into quarterly averages stored in wpg1.
+4.  Use aggregate(wpg, as.yearqtr) to aggregate the prices into quarterly averages stored in wpg1.
 
 ```{r}
 
@@ -72,7 +77,7 @@ Task 2: Categorical Distribution & Legends (nations_dataset.csv) Objective: Clea
 
 ```
 
-3. Compute the frequency distribution of outlook using table().
+3.  Compute the frequency distribution of outlook using table().
 
 ```{r}
 

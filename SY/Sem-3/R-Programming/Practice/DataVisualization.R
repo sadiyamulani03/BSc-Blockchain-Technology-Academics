@@ -1,9 +1,9 @@
 #12/8
 #Data Visualization:-
-Gasoline_price <- read.csv()
-head(Gasoline_price)
+Gasoline_prices <- read.csv()
+head(Gasoline_prices)
 
-weekly_gasoline_prices=Gasoline_price
+weekly_gasoline_prices=Gasoline_prices
 str(weekly_gasoline_prices)
 
 #type conversion to date
@@ -11,7 +11,7 @@ weekly_gasoline_prices$Data = as.Date(weekly_gasoline_prices$Data, format = "%m-
 
 plot(weekly_gasoline_prices, type = "l", main = "time-serie weekly", )
 
-Library(Zoo)
+Library(zoo)
 wpg=zoo(weekly_gasoline_prices..Dollars.per.Gallon)
 
 #13/8
