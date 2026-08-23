@@ -32,13 +32,13 @@ str(weekly_gasoline_prices$Date)
 
 ```{r}
 library(zoo)
-wpg=zoo(weekly_gasoline_prices..Dollars.per.Gallon)
+wpg <- zoo(weekly_gasoline_prices$Dollars.per.Gallon, order.by = weekly_gasoline_prices$Date)
 ```
 
 4.  Use aggregate(wpg, as.yearqtr) to aggregate the prices into quarterly averages stored in wpg1.
 
 ```{r}
-
+wpg1 <- aggregate(wpg, as.yearqtr, mean)
 ```
 
 5\. Configure a $2 \times 2$ grid layout using par(mfrow = c(2, 2), mar = c(2, 3, 2, 1)). 6. Render the following four sub-plots in the grid: ○ Plot 1: Line plot (type = "l") of wpg1 with col = "red" and lwd = 2.
@@ -68,7 +68,9 @@ wpg=zoo(weekly_gasoline_prices..Dollars.per.Gallon)
 Task 2: Categorical Distribution & Legends (nations_dataset.csv) Objective: Clean factor structures, construct frequency tables, and build customized bar plots with color palettes and legends. Instructions: 1. Load nations_dataset.csv and inspect the variable data types using str().
 
 ```{r}
-
+library(readr)
+nations_dataset <- read_csv("D:/Uni/SY/Sem-3/R-Programming/employee/nations_dataset.csv")
+str(nations_dataset)
 ```
 
 2\. Convert the outlook column to a nominal factor using as.factor().

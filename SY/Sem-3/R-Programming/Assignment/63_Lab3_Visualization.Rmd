@@ -1,0 +1,268 @@
+---
+title: "63_Lab3_Visualization"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r}
+rm(list = ls())
+```
+
+Task 1: Time-Series & Multi-Panel Layouts (Gasoline prices.csv) Objective: Parse dates, aggregate time-series metrics into quarterly intervals using the zoo package, and build multi-paneled graphical dashboards.
+Instructions:
+
+1\.
+Load Gasoline prices.csv and inspect its structure using str() and head().
+
+```{r}
+library(readr)
+Gasoline_prices <- read_csv("D:/Uni/SY/Sem-3/R-Programming/employee/Gasoline prices.csv")
+str(Gasoline_prices)
+head(Gasoline_prices)
+```
+
+2.
+Convert the Date column from character/factor into a Date object using as.Date() with the correct format parameter ("%m-%d-%Y").
+
+```{r}
+weekly_gasoline_prices = Gasoline_prices
+
+weekly_gasoline_prices$Date = as.Date(weekly_gasoline_prices$Date, format = "%m-%d-%Y")
+
+str(weekly_gasoline_prices$Date) 
+```
+
+3\.
+Using library(zoo), construct a zoo time-series object named wpg indexed by the formatted Date column.
+
+```{r}
+library(zoo)
+
+wpg <- zoo(weekly_gasoline_prices[[2]], order.by = weekly_gasoline_prices$Date)   
+```
+
+4\.
+Use aggregate(wpg, as.yearqtr) to aggregate the prices into quarterly averages stored in wpg1.
+
+```{r}
+wpg1 <- aggregate(wpg, as.yearqtr, mean)
+```
+
+5\.
+Configure a $2 \times 2$ grid layout using par(mfrow = c(2, 2), mar = c(2, 3, 2, 1)).
+
+```{r}
+par(mfrow = c(2, 2), mar = c(2, 3, 2, 1))
+```
+
+6\.
+Render the following four sub-plots in the grid: ○ Plot 1: Line plot (type = "l") of wpg1 with col = "red" and lwd = 2.
+
+```{r}
+plot(wpg1, type = "l", col = "red", lwd = 2)
+```
+
+○ Plot 2: Line plot (type = "l") of raw weekly_gasoline_prices with col = "green" and lwd = 2.
+
+```{r}
+plot(weekly_gasoline_prices, type = "l", col = "green", lwd = 2)
+```
+
+○ Plot 3: Bar plot (barplot()) of wpg1 with col = "blue" and a border = "red".
+
+```{r}
+barplot(wpg1, col = "blue", border = "red")
+```
+
+○ Plot 4: Standard point-line plot of wpg1 with customized title and labeled axes.
+
+```{r}
+plot(wpg1, type = "b", 
+     main = "Weekly Gasoline Prices", 
+     xlab = "Week", 
+     ylab = "Price")
+```
+
+Task 2: Categorical Distribution & Legends (nations_dataset.csv) Objective: Clean factor structures, construct frequency tables, and build customized bar plots with color palettes and legends.
+Instructions:
+
+1\.
+Load nations_dataset.csv and inspect the variable data types using str().
+
+```{r}
+Nations <- read_csv("D:/Uni/SY/Sem-3/R-Programming/employee/nations_dataset.csv")
+str(Nations)
+```
+
+2\.
+Convert the outlook column to a nominal factor using as.factor().
+
+```{r}
+Nations$outlook <- as.factor(Nations$outlook)
+```
+
+3\.
+Compute the frequency distribution of outlook using table().
+
+```{r}
+table(Nations$outlook)
+```
+
+4.
+Plot a bar chart of the frequency table with: ○ Custom title: "Economic Outlook Frequency Distribution".
+○ Rainbow palette containing distinct colors matching the number of unique factor levels.
+○ Labeled X-axis ("Outlook Category") and Y-axis ("Number of Nations").
+
+5\.
+Add a legend to the top-right corner showing each category label, matching fill colors, and an adjusted scale factor (cex = 0.7).
+
+```{r}
+barplot(table(Nations$outlook), main="Bar Plot", horiz = T, col = rainbow(3),ylab = "Outlook Category", xlab = "Number of Nations")
+
+legend("topright", c("Negative", "Positive", "Stable"), fill = rainbow(3), cex = 0.7)
+```
+
+Task 3: Relative Frequencies, 2D & 3D Pie Charts (softdrinks.xlsx) Objective: Calculate relative percentages, build annotated 2D pie charts, and render exploded 3D pie charts using plotrix.
+Instructions:
+
+1\.
+Read softdrinks.xlsx using library("readxl").
+Convert the drinknames column into a factor.
+
+```{r}
+library(readr)
+
+softdrinks <- read_csv("D:/Uni/SY/Sem-3/R-Programming/employee/softdrinks.csv")
+
+softdrinks$drinknames = as.factor(softdrinks$drinknames)
+```
+
+2.  Build a frequency table and convert it to a data frame named softdrink1 using cbind.data.frame(table(softdrinks)).
+
+    ```{r}
+    softdrink1 = cbind.data.frame(table(softdrinks))
+    ```
+
+3.  Create a derived column named relativefreq calculated as: $$\text{relativefreq} = \frac{\text{Freq}}{\sum \text{Freq}}$$
+
+    ```{r}
+    softdrink1$relativefreq = softdrink1$Freq/sum(softdrink1$Freq)
+    ```
+
+4.  Generate horizontal and vertical bar plots of relativefreq with category names displayed along the axes.
+
+    ```{r}
+    barplot(softdrink1$relativefreq, names.arg = softdrink1$drinknames, col= rainbow(8))
+    ```
+
+5.  Create a 2D pie() chart where each slice is labeled with the brand name and its percentage value formatted using paste0() and round() (e.g., "Coca-Cola 20.5%").
+
+    ```{r}
+    library("plotrix")
+    pie(
+      softdrink1$relativefreq, 
+      labels = paste0(softdrink1$drinknames, " ", round(100 * softdrink1$relativefreq, 1), "%"), 
+      main = "Soft Drinks Frequency Distribution", 
+      col = rainbow(length(softdrink1$drinknames))
+    )
+    ```
+
+6.  Using library("plotrix"), generate a 3D pie chart (pie3D()) with the same percentage labels, matching color palettes, and a customized top-right legend.
+
+```{r}
+library("plotrix")
+pie3D(softdrink1$relativefreq, 
+      labels = paste0(softdrink1$drinknames, " " ,round(100*softdrink1$reletivefreq, 2),"%"),
+      main = "soft drinks frequency dust",
+      col = rainbow(8))
+```
+
+Task 4: Histograms, Frequency Labels & Dual-Axis Density Plots Objective: Understand bin widths (breaks), overlay frequency labels on bars, and construct dual-axis plots combining histograms with kernel density estimates.
+Instructions:
+
+1\.
+Generate a reproducible sample of 1,000 random integers between 50 and 100 using sample(50:100, 1000, replace = TRUE).
+
+```{r}
+var = sample(50:100, 1000, replace = T)
+summary(var)
+```
+
+2.
+Plot three baseline histograms comparing the effect of different bin counts: breaks = 100, breaks = 10, and breaks = 1.
+
+```{r}
+hist(var, xlab="freq", ylab="varaible", col=rainbow(20), breaks = 100)
+hist(var, xlab="freq", ylab="varaible", col=rainbow(20), breaks = 10)
+hist(var, xlab="freq", ylab="varaible", col=rainbow(20), breaks = 1)
+```
+
+3.
+Save the histogram object into a variable m \<- hist(...) using breaks = 10.
+
+4\.
+Use text() with m$mids and m$counts to add exact frequency counts directly above each histogram bar.
+
+```{r}
+m = hist(var, xlab="freq", ylab="varaible", col=rainbow(20), breaks = 10, main = "Histogram")
+
+text(m$mids, m$counts, labels = m$counts, adj = c(0.5, -0.5))
+```
+
+5\.
+Configure margins using par(mar = c(5, 4, 4, 6) + 0.1).
+Plot the histogram, set par(new = TRUE), and overlay a kernel density curve (lines(density(var)) or plot(density(var))) with lwd = 3.
+
+```{r}
+par(mar = c(5,4,4,6+0.1))
+```
+
+6\.
+Add a secondary Y-axis on the right-hand side (axis(4)) labeled "Density Estimate" using mtext(side = 4).
+
+```{r}
+plot(density(var), lwd = 4, col="black", xlab = "", ylab = "0", axes = F, main = "")
+
+axis(4, col = "black", color.axis = "black")
+mtext("Cell density",side=4,col="black", line=4)
+```
+
+Task 5: Stacked and Grouped Multi-Variable Matrix Bar Plots (Meal.xlsx) Objective: Subset cross-tabulated survey responses, cast data frames into matrices, and build side-by-side vs. stacked visual comparisons.
+Instructions:
+
+1\.
+Import Meal.xlsx using read_excel().
+
+```{r}
+library(readxl)
+Meal <- read_excel("D:/Uni/SY/Sem-3/R-Programming/employee/Meal.xlsx")
+```
+
+2\.
+Extract the price evaluation columns across the top 3 quality ratings (Meal[c(1:3), c(2, 6)] or matching numeric categories).
+
+```{r}
+Meal[c(1:3),c(2,6)]
+```
+
+3\.
+Convert this subset to a numeric matrix using as.matrix().
+
+```{r}
+as.matrix(Meal[c(1:3),c(2,6)])
+```
+
+4\.
+Plot a Stacked Bar Plot of the matrix with distinct colors per category, white borders, labeled axes, and an associated legend showing the quality ratings.
+
+5\.
+Plot a Grouped (Side-by-Side) Horizontal Bar Plot by setting beside = TRUE and horiz = TRUE.
+Add appropriate axis labels and legends.
+
+```{r}
+barplot(as.matrix(Meal[c(1:3),c(2,6)]), col = rainbow(3), border = "white", xlab = "Price", ylab = "Number of Rest", beside = T, horiz = T)
+
+legend("topright", Meal$`Quality rating` [1:3], cex=1, fill=rainbow(3))
+```
