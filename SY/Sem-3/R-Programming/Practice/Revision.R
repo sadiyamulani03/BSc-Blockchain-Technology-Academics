@@ -96,3 +96,51 @@ DF = data.frame(
 )
 is.na(DF)
 
+#25/8
+#In R, the modern and most efficient way to reshape data betweeen wide and long format is using the pivot_longer() and pivot_wider() functions from the tidyr package(part of the tidyverse)
+library("tidyr")
+#remove observations from salary having NA
+DF |>
+  drop_na(salary)
+
+#replace NA using pipeline
+DF %>%
+  replace_na(
+    list(
+    salary=0,
+    age=0
+  ))
+
+marks <-
+  data.frame(
+    Student = c("A","B","C"),
+    Maths = c(80,70,90),
+    Science = c(75,85,88),
+    English = c(90,80,85)
+  )
+
+#wide to Long (pivot_longer):- Use pivot_longer() when you have variables spread across multiple columns (wide format) and you want to collapse them into a single columns with their values stacked into another (lonf format).
+#long datset
+long_marks = marks |>
+  pivot_longer(
+    cols = Maths:English,
+    names_to = "Subject",
+    values_to = "Marks"
+  )
+#Long to Wide (pivot_wider):-When you want to take data repeating down rows and spread it out into multiple columns.This is ideal for creating human-readable summary tables.
+#wider dataset
+wide_marks = long_marks |>
+  pivot_wider(
+    names_from = Subject,
+    values_from = Marks
+  )
+
+#combining datasets
+
+
+
+
+
+
+
+
