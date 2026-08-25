@@ -14,3 +14,7 @@ const server = net.createServer((socket) => {
             socket.write(JSON.stringify({result: result}));
     });
 });
+
+server.listen(5000, '127.0.0.1', () => {
+    console.log('RPC Server is waiting for client');
+});
