@@ -138,9 +138,46 @@ wide_marks = long_marks |>
 #combining datasets
 
 
+#31/8
+#data visualization
+library(ggplot2)
+data(iris)
+head(iris)
 
+ggplot(iris,
+       aes(#asthetic
+         x = Sepal.Length,
+         y = Sepal.Width, 
+         size = Petal.Length,
+       color = Species)
+       ) + geom_point()#geometric point
 
+#geom_line
+ggplot(iris,
+       aes(
+         x = Sepal.Width,
+         y = Petal.Length
+       )
+       ) + geom_line()
 
+#Bar Plot
+ggplot(iris,
+       aes(x= Species,
+           fill = Species)
+       ) + geom_bar()
 
+#histogram
+ggplot(iris,
+       aes(x = Sepal.Length))+ 
+       geom_histogram(bins =10,
+       fill = "skyblue",
+       colour = "black")
 
-
+#density plot
+ggplot(
+  iris,
+  aes(
+    x = Sepal.Length,
+    fill = Species
+  )
+) + geom_density(alpha = 0.4) ##alpha is unit of transparency 
