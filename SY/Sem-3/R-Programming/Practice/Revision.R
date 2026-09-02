@@ -136,7 +136,35 @@ wide_marks = long_marks |>
   )
 
 #combining datasets
+#2/9
+#joins 
 
+students <- data.frame(
+  ID=c(1,2,3,4),
+  Names=c("A","B","c","D")
+)
+
+marks <- data.frame(
+  ID = c(1,2,3,5),
+  Marks = c(80,75,90,60)
+) 
+#inner join (merge ony complete data if any column is missing it won't be combined.)
+#Def:- 1) left-join:-keeps all rows from x, and adds matching columns from y. Fill non-matches with NA.
+#2) right_jion:- keeps all rows from y, and adds matching columns from x.
+
+###The four main types of mutating joins are:
+  
+#1)inner_join(): Returns only rows where there is a match in both data frames, discarding unmatched rows from either side. 
+inner_join(students, marks, by = "ID")
+
+#2)left_join(): Returns all rows from the first data frame (x) and matching rows from the second (y), filling in NA for non-matches in y. 
+left_join(students, marks, by = "ID")
+
+#3)right_join(): Returns all rows from the second data frame (y) and matching rows from the first (x), filling in NA for non-matches in x. 
+right_join(students, marks, by = "ID")
+
+#4)full_join(): Returns all rows from both data frames, matching where possible and using NA for missing values on either side.
+full_join(students, marks, by = "ID")
 
 #31/8
 #data visualization
@@ -181,3 +209,5 @@ ggplot(
     fill = Species
   )
 ) + geom_density(alpha = 0.4) ##alpha is unit of transparency 
+
+
