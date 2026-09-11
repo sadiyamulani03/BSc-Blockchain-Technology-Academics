@@ -1,0 +1,64 @@
+---
+title: "63_Assignment5_Wrangling"
+output: html_document
+---
+
+```{r}
+rm(list = ls())
+```
+
+ASSIGNMENT 5: MODULE BREAKDOWN (50 MARKS)
+
+● Task 1 Data Selection, Filtering & Pipe Transformation (dplyr) (10 Marks)
+
+● Task 2 Feature Engineering, Conditional Mutation & Aggregation (10 Marks)
+
+● Task 3 NA Imputation & Reshaping (tidyr: pivot_longer / wider) (10 Marks)
+
+● Task 4 Relational Database Joins (Inner, Left, Right, Full) (10 Marks)
+
+● Task 5 Layered Visual Analytics with ggplot2 (10 Marks)
+
+Task 1: Data Selection, Slicing & Logical Filtering (dplyr) Objective: Master column selection, exclusion, row slicing, and multi-condition filtering on the iris dataset.
+
+Instructions:
+
+1\. Load library(dplyr) and inspect the built-in iris dataset using head(), str(), and summary().
+
+```{r}
+library(dplyr)
+head(iris)
+str(iris)
+summary(iris)
+```
+
+2\. Use the native pipe operator (\|\>) with select() to display: ○ Only the columns from Sepal.Length through Petal.Length using the colon (:) operator.
+
+```{r}
+iris |> #|> is a pipe operator used to chain different functions together
+  dplyr::select("Sepal.Width","Petal.Length")
+```
+
+○ Only the columns Sepal.Length, Sepal.Width, and Species.
+
+```{r}
+iris |> 
+  dplyr::select("Sepal.Width","Petal.Length", "Species")
+```
+
+3\. Demonstrate column exclusion by selecting all columns except Sepal.Width using -Sepal.Width.
+
+```{r}
+iris |> 
+  dplyr::select(-Sepal.Width)
+```
+
+4\. Contrast dplyr::select() with Base R bracket indexing by extracting rows 20 to 45 and columns 1 and 2 using iris[20:45, c(1, 2)].
+
+```{r}
+iris |> 
+  slice(20:45) |>
+  dplyr::select(,c(1, 2))
+```
+
+5\. Filter the dataset to extract: ○ Observations where Sepal.Length \> 6.0. ○ Observations where the species is either "virginica" OR "versicolor" using the logical OR operator (\|). 6. Sort the entire dataset by Sepal.Length in descending order using arrange(desc(...)) and display the first 6 rows.

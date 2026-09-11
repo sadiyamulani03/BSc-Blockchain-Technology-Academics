@@ -150,7 +150,7 @@ marks <- data.frame(
 ) 
 #inner join (merge ony complete data if any column is missing it won't be combined.)
 #Def:- 1) left-join:-keeps all rows from x, and adds matching columns from y. Fill non-matches with NA.
-#2) right_jion:- keeps all rows from y, and adds matching columns from x.
+#2) right_join:- keeps all rows from y, and adds matching columns from x.Fill non-matches with NA.
 
 ###The four main types of mutating joins are:
   
@@ -172,6 +172,7 @@ library(ggplot2)
 data(iris)
 head(iris)
 
+#geom_points
 ggplot(iris,
        aes(#asthetic
          x = Sepal.Length,
@@ -209,5 +210,61 @@ ggplot(
     fill = Species
   )
 ) + geom_density(alpha = 0.4) ##alpha is unit of transparency 
+
+#box plot
+
+
+#8/9
+# linear regression model :- Linear regression in R is a statistical method used to model the linear relationship between a dependent variable (response) and one or more independent variables (predictors).  It aims to find the best-fitting straight line that minimizes the difference between observed and predicted values, enabling both understanding of variable relationships and prediction of future outcomes. 
+model1 = lm(
+  mpg ~ wt,
+  data = mtcars
+)
+
+model1 #Intercept=37.285  and wt=-5.344. means when wt is 0 then mpg is 37.285 
+##mpg :- Miles per gallon, It represents the fuel efficiency of the car,
+#Wt :- Weight of the car,It is measured in approximately 1000 pounds in this dataset
+#hp :- Horsepower
+#disp :- Engine displacement
+#Independent variables :- we use to make the prediction.
+#wt 
+#Call it:
+  #Predictor / Independent varaible / Explanatory variable
+
+#Dependent variable :- we want to predict 
+#mpg 
+#Call it :
+  #Response / Dependent var / Outcome var 
+
+#coefficient of wt (Slope):- for every increase of 1 unit in wt,the predicted mpg decreases by approximately 5.344 units. If wt increases then mpg decreases.
+
+#10/9
+#intercept :- when wt/y-axis is 0, the predicted mpgx-axis is 37.285
+
+summary(model1)
+
+#fitted():- gives the values predicted by the model for the observations that were used to build the model.
+fitted(model1)
+
+#residuals:- A residual is the difference between what actually happened and what our model predicted.
+
+#1)Positive residential -> Actual>Predicted  2)Negative -> Actual<Predicted 3)Zero -> Actual=Predicted
+
+head(mtcars)
+
+residuals(model1)
+#or
+model1$residuals
+
+coef(model1)
+
+#multiple R squared :-R-squared tells us how much of the variation in the dependent variable is explained by our model.
+0.7528 * 100 #approximately 75.3% of the variation in mpg is explained by wt in this linear model.
+
+#Adjusted R-squared is a modified version of R-squared that takes the number of predictors in the model into account.
+
+
+
+
 
 
