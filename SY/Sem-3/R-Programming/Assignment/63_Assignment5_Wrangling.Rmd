@@ -61,4 +61,242 @@ iris |>
   dplyr::select(,c(1, 2))
 ```
 
-5\. Filter the dataset to extract: ○ Observations where Sepal.Length \> 6.0. ○ Observations where the species is either "virginica" OR "versicolor" using the logical OR operator (\|). 6. Sort the entire dataset by Sepal.Length in descending order using arrange(desc(...)) and display the first 6 rows.
+5\. Filter the dataset to extract: ○ Observations where Sepal.Length \> 6.0. ○ Observations where the species is either "virginica" OR "versicolor" using the logical OR operator (\|).
+
+```{r}
+iris |>
+  dplyr::filter(Sepal.Length > 6 ,Species == c("virginica","versicolor"))
+```
+
+6.  Sort the entire dataset by Sepal.Length in descending order using arrange(desc(...)) and display the first 6 rows.
+
+```{r}
+head(arrange(iris , desc(Sepal.Length)))
+```
+
+Task 2: Feature Engineering, Conditional Mutation & Grouped Summaries Objective: Derive calculated columns using mutate(), implement conditional labels with ifelse(), and compute grouped statistics using group_by() and summarise(). Instructions:
+
+1\. Use mutate() to create a new column Sepal.ratio defined as $\frac{\text{Sepal.Length}}{\text{Sepal.Width}}$.
+
+```{r}
+iris |>
+  mutate(
+    sepal.ratio = Sepal.Length/Sepal.Width
+  )
+```
+
+2\. Chain mutate() with select() using the pipe (\|\>) to produce a two-column summary data frame containing only Species and Sepal.ratio.
+
+```{r}
+iris |> 
+  mutate(sepal.ratio = Sepal.Length / Sepal.Width) |>
+  select(Species, sepal.ratio)
+```
+
+3\. Create a derived categorical column named Petal.Size using mutate() and ifelse() such that: ○ If Petal.Length \> 4, assign "Large". ○ Otherwise, assign "Small".
+
+```{r}
+iris |>
+  mutate(
+    Petal.size = ifelse(Petal.Length > 4, "Large", "Small")
+  )
+```
+
+4.  Calculate overall summary statistics for Sepal.Length: its mean (mean_sepal), minimum (min_sepal), and maximum (max_sepal).
+
+    ```{r}
+    iris |>
+      summarise(
+        mean_sepal = mean(Sepal.Length),
+        min_sepal = min(Sepal.Length),
+        max_sepal = max(Sepal.Length)
+      )
+    ```
+
+5.  Group the data by Species using group_by() and compute: ○ Mean of Sepal.Length (mean_sepal) ○ Standard deviation of Sepal.Length (sd_sepal) ○ Total number of observations per species (count = n())
+
+```{{r}}
+iris |>
+  group_by(Species) |>
+  summarise(
+    mean_sepal = mean(Sepal.Length),
+    sd_sepal = sd(Sepal.Length),
+    count = n()
+  )
+```
+
+6.  Build a grouped pipeline that calculates the average petal length per species (average_petal = mean(Petal.Length)) and filters for species where average_petal \> 4.
+
+```{{r}}
+iris |>
+  group_by(Species)|>
+  summarise(
+    average_petal = mean(Petal.Length))|>
+  filter(average_petal>4)
+```
+
+Task 3: Missing Value Handling & Data Reshaping (tidyr) Objective: Identify, drop, and replace missing values (NA), and pivot datasets between wide and long representations.
+
+Instructions: 1. Construct the following test data frame named DF: R DF \<- data.frame( name = c("A", "B", "C", "D"), salary = c(50000, NA, 60000, NA), age = c(25, 30, NA, 35) )
+
+```{r}
+DF = data.frame(
+  name = c("A","B","C","D"),
+  salary = c(50000, NA, 60000, NA),
+  age = c(25, 30, NA, 35)
+)
+```
+
+2\. Check for missing values across the entire data frame using is.na(DF).
+
+```{r}
+is.na(DF)
+```
+
+3\. Drop all rows containing any NA value using drop_na().
+
+```{r}
+library("tidyr")
+DF |>
+  drop_na()
+```
+
+4\. Replace missing values using replace_na() by providing a named list: impute salary = 0 and age = 0.
+
+```{r}
+DF %>%
+  replace_na(
+    list(
+      salary=0,
+      age=0
+    ))
+```
+
+5\. Construct the student marks data frame: R Marks \<- data.frame( Student = c("A", "B", "C"), Maths = c(80, 70, 90), Science = c(75, 85, 88), English = c(90, 80, 85) )
+
+```{r}
+marks <-
+  data.frame(
+    Student = c("A","B","C"),
+    Maths = c(80,70,90),
+    Science = c(75,85,88),
+    English = c(90,80,85)
+  )
+```
+
+6\. Pivot Marks from wide to long format using pivot_longer(): ○ Gather columns Maths:English. ○ Name the new key column "Subject". ○ Name the new value column "Marks". ○ Store the result in long_marks.
+
+```{r}
+long_marks = marks |>
+  pivot_longer(
+    cols = Maths:English,
+    names_to = "Subject",
+    values_to = "Marks"
+  )
+```
+
+7\. Pivot long_marks back to wide format using pivot_wider() and verify that the output matches the original Marks table.
+
+```{r}
+wide_marks = long_marks |>
+  pivot_wider(
+    names_from = Subject,
+    values_from = Marks
+  )
+```
+
+Task 4: Relational Two-Table Operations (Database Joins) Objective: Merge relational tables using the four fundamental join types: Inner, Left, Right, and Full joins.
+
+Instructions: 1. Construct two relational tables: R Students \<- data.frame( ID = c(1, 2, 3, 4), Name = c("A", "B", "C", "D") ) marks \<- data.frame( ID = c(1, 2, 3, 5), Marks = c(80, 75, 90, 60) )
+
+```{r}
+students <- data.frame(
+  ID=c(1,2,3,4),
+  Names=c("A","B","c","D")
+)
+
+marks <- data.frame(
+  ID = c(1,2,3,5),
+  Marks = c(80,75,90,60)
+)
+```
+
+2.  Execute and print the outputs of all four relational joins using the key column by = "ID": ○ inner_join(Students, marks, by = "ID") ○ left_join(Students, marks, by = "ID") ○ right_join(Students, marks, by = "ID") ○ full_join(Students, marks, by = "ID")
+3.  Write a brief comment above each join explaining: ○ Which rows were retained. ○ Which rows were dropped. ○ Where and why NA values were introduced.
+
+```{r}
+#1)inner_join(): Returns only rows where there is a match in both data frames, discarding unmatched rows from either side. 
+inner_join(students, marks, by = "ID")
+
+#2)left_join(): Returns all rows from the first data frame (x) and matching rows from the second (y), filling in NA for non-matches in y. 
+left_join(students, marks, by = "ID")
+
+#3)right_join(): Returns all rows from the second data frame (y) and matching rows from the first (x), filling in NA for non-matches in x. 
+right_join(students, marks, by = "ID")
+
+#4)full_join(): Returns all rows from both data frames, matching where possible and using NA for missing values on either side.
+full_join(students, marks, by = "ID")
+```
+
+Task 5: Visual Analytics with ggplot2 Objective: Construct graphics using the Grammar of Graphics (ggplot2), demonstrating points, lines, bars, histograms, and density curves.
+
+Instructions: 1. Load library(ggplot2) and set up the default iris dataset.
+
+```{r}
+library(ggplot2)
+data(iris)
+```
+
+2\. Scatter Plot (geom_point): Plot x = Sepal.Length vs. y = Sepal.Width, map point size to Petal.Length, and map point color to Species. Add clear title and axis labels.
+
+```{r}
+ggplot(iris,
+       aes(#asthetic
+         x = Sepal.Length,
+         y = Sepal.Width, 
+         size = Petal.Length,
+         color = Species)
+) + geom_point()
+```
+
+3\. Line Plot (geom_line): Plot x = Sepal.Width vs. y = Petal.Length.
+
+```{r}
+ggplot(iris,
+       aes(
+         x = Sepal.Width,
+         y = Petal.Length
+       )
+) + geom_line()
+```
+
+4\. Bar Plot (geom_bar): Plot the distribution of Species, mapping fill color to Species.
+
+```{r}
+ggplot(iris,
+       aes(x= Species,
+           fill = Species)
+) + geom_bar()
+```
+
+5\. Histogram (geom_histogram): Plot the distribution of Sepal.Length using bins = 5, fill = "skyblue", and colour = "black".
+
+```{r}
+ggplot(iris,
+       aes(x = Sepal.Length))+ 
+  geom_histogram(bins =5,
+                 fill = "skyblue",
+                 colour = "black")
+```
+
+6\. Density Plot (geom_density): Plot smoothed density estimates of Sepal.Length grouped by Species, using alpha = 0.8 for fill transparency.
+
+```{r}
+ggplot(
+  iris,
+  aes(
+    x = Sepal.Length,
+    fill = Species
+  )
+) + geom_density(alpha = 0.4)
+```

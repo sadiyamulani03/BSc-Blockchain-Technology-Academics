@@ -263,6 +263,50 @@ coef(model1)
 
 #Adjusted R-squared is a modified version of R-squared that takes the number of predictors in the model into account.
 
+#15/9
+
+newdata <- data.frame(
+  wt = c(2,3,4)
+)
+
+#predict():- To calculate the prediction for newdata
+predict(model1 , newdata )#w=from wich model to which plot
+
+#confidence interval:-A confidence interval gives us a range of near to be true values for a population parameter
+confint(model1)
+
+#prediction interval
+predict(model1, newdata, interval="prediction")
+
+#fit means predicted values
+#lwr means lower limit
+#upr means upper limit
+
+#confidence interval shows uncertainity about the mean response and prediction interval shows uncertainity about an individual usual observations 
+#prediction intervals are usually wider
+
+plot(mtcars$wt,
+     mtcars$mpg,
+     main = "Linear regression",
+     xlab = "weight",
+     ylab = "Miles per gallon",
+     )
+
+#Draw the regression line represented by model1.
+abline(model1,
+       col = "red",
+       lwd = 2)
+
+plot(fitted(model1),
+     residuals(model1),
+     xlab = "Fitted values",
+     ylab = "Residuals",
+     main = "residual plot")
+
+
+
+
+
 
 
 

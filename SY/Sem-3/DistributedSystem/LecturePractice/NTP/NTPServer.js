@@ -2,12 +2,12 @@ const net = require('net');
 
 const server = net.createServer((socket) => {
 
-    const time = Date.now();
+    const Servertime = Date.now();
 
     console.log("Server: Sending time",
-        new Date(time).toLocaleTimeString());
+        new Date(Servertime).toLocaleTimeString());
 
-    socket.write(time.toString());
+    socket.write(Servertime.toString());
 });
 
 server.listen(5000, () => {
