@@ -282,6 +282,7 @@ predict(model1, newdata, interval="prediction")
 #lwr means lower limit
 #upr means upper limit
 
+#16/9
 #confidence interval shows uncertainity about the mean response and prediction interval shows uncertainity about an individual usual observations 
 #prediction intervals are usually wider
 
@@ -303,12 +304,40 @@ plot(fitted(model1),
      ylab = "Residuals",
      main = "residual plot")
 
+#17/9
+abline(h = -1.25, #h is horizontal
+       col = "red",
+       lwd = 2)
 
+abline(v = 20, #v is verticle
+       col = "red",
+       lwd = 2)
 
+#multiple regression
+model1
+model2 <- lm(
+  mpg ~ wt + hp + disp,
+  data = mtcars
+)
 
+summary(model2)
+par(mfrow = c(2,2))
+par(mar = c(4,4,2,1))
+plot(model1)
+plot(model2)
 
+# k means:- 
 
+iris
 
+head(iris_data) = iris[, 1:4]
 
+#scaling :- scaling the data scaled function is used to standardize numerical data
+iris_scaled = scale(iris_data)
+
+head(iris_scaled) = scale(iris_data)
+
+salary = c(1000,2000,3000,4000)
+scaled_sal = scale(salary)
 
 
