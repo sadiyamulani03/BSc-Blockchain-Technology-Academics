@@ -326,19 +326,5 @@ par(mar = c(4,4,2,1))
 plot(model1)
 plot(model2)
 
-# k means:- 
-
-iris
-
-head(iris_data) = iris[, 1:4]
-
-#scaling :- scaling the data scaled function is used to standardize numerical data
-iris_scaled = scale(iris_data)
-
-head(iris_scaled) = scale(iris_data)
-
-salary = c(1000,2000,3000,4000)
-scaled_sal = scale(salary)
-
 
 
