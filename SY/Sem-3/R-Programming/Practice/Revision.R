@@ -341,3 +341,4 @@ salary = c(1000,2000,3000,4000)
 scaled_sal = scale(salary)
 
 
+
